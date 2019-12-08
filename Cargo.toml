@@ -1,0 +1,29 @@
+[package]
+name = "protobuf-bug"
+version = "0.1.0"
+authors = ["Steven Jimenez"]
+edition = "2018"
+build = "build.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bytes = "0.4"
+protobuf = "2.8"
+serde = "1.0"
+
+[build-dependencies]
+protoc-rust = "2.8"
+protobuf = "2.8"
+serde = "1.0"
+
+[features]
+default = [
+  "bytes/serde",
+  "protobuf/with-bytes",
+  "protobuf/with-serde",
+  "serde/derive",
+  "with-serde",
+]
+with-serde = []
+
